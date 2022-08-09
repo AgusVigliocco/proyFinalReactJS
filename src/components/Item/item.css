@@ -1,0 +1,20 @@
+.img-item{
+    width: 80%;
+    height: auto;
+    margin: 1rem;
+    
+}
+.item{
+    /* max-height: 50%;
+    max-width: 100%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+    justify-content: flex-end;
+    border: 0.1rem rgb(218, 218, 218) solid;
+    border-radius: 1rem;
+}
+.button{
+    margin-bottom: 10px;
+}
