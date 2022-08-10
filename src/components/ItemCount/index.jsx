@@ -15,7 +15,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
     <div className="d-flex flex-column align-items-center">
       <div>
         <button
-          className="btn btn-primary ms-3"
+          className="btn btn-dark ms-3"
           disabled={count <= 1}
           onClick={rest}
         >
@@ -33,7 +33,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
         </button>
         <span className="h3">{count}</span>
         <button
-          className="btn btn-primary ms-3"
+          className="btn btn-dark ms-3"
           disabled={count >= stock}
           onClick={add}
         >
@@ -52,7 +52,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
       </div>
       <div>
         <button
-          className="btn btn-primary ms-3"
+          className="btn btn-dark ms-3"
           disabled={stock <= 0}
           onClick={() => onAdd(count)}
         >

@@ -1,5 +1,6 @@
 import React from "react";
 import "./item.css";
+import { Link } from "react-router-dom";
 
 const Item = ({ info }) => {
   return (
@@ -8,15 +9,15 @@ const Item = ({ info }) => {
       <p>{info.Modelo}</p>
       <p>u$s {info.Precio} (+ impuestos)</p>
 
-      <a
+      <Link
+        to={`/detalle/${info.id}`}
         name=""
         id=""
         className="btn btn-primary button"
-        href="#url"
         role="button"
       >
         Mas Info
-      </a>
+      </Link>
     </div>
   );
 };

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-import ItemCount from "../../components/ItemCount";
+
 import ItemList from "../../components/ItemList";
 import "./ItemListContainer.css";
+import { useParams } from "react-router-dom";
+
 const products = [
   {
     id: 1,
@@ -99,22 +101,25 @@ const products = [
 const ItemListContainer = () => {
   const [data, setData] = useState([]);
 
+  const { categoriaId } = useParams();
+
   useEffect(() => {
     const getData = new Promise((resolve) => {
       setTimeout(() => {
         resolve(products);
-      }, 3000);
+      }, 1000);
     });
-    getData.then((res) => setData(res));
-  }, []);
-
-  const onAdd = (quantity) => {
-    console.log(`compraste ${quantity} productos`);
-  };
+    if (categoriaId) {
+      getData.then((res) =>
+        setData(res.filter((product) => product.Categoria === categoriaId))
+      );
+    } else {
+      getData.then((res) => setData(res));
+    }
+  }, [categoriaId]);
 
   return (
     <div className="list-item">
-      <ItemCount initial={1} stock={5} onAdd={onAdd} />
       <ItemList data={data} />
     </div>
   );
