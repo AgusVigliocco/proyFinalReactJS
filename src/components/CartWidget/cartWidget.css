@@ -1,11 +1,10 @@
-.cart-link{
-font-size: 3rem;
-margin-left: 50rem;
-text-decoration: none;
-color: #fff;
+.cart-link {
+  font-size: 3rem;
+  text-decoration: none;
+  color: #fff;
 }
 
-.cart-number{
-    font-size: xxx-large;
-    color: white;
+.cart-number {
+  font-size: xxx-large;
+  color: white;
 }

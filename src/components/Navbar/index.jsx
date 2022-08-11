@@ -20,7 +20,6 @@ const Navbar = () => {
           <NavLink className="cart-link" to="/carrito">
             <CartWidget />
           </NavLink>
-          <span className="cart-number">3</span>
         </div>
         <button
           className="navbar-toggler"
