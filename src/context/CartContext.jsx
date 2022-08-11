@@ -5,11 +5,9 @@ export const useCartContext = () => useContext(CartContext);
 
 const CartProvider = ({ children }) => {
   const TotalPrice = () => {
-    return cart.reduce(
-      (acumulador, act) => acumulador + act.quantity * act.Precio,
-      0
-    );
-  };
+
+    return cart.reduce((prev, producto) => prev + ((producto.Precio * producto.quantity) + ((producto.Precio * producto.quantity) * 0.21)), 0);
+  }
 
   const TotalProducts = () =>
     cart.reduce(

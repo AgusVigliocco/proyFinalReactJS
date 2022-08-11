@@ -1,9 +1,9 @@
 import "./item.css";
-
 import { Link } from "react-router-dom";
 import React from "react";
 
 const Item = ({ info }) => {
+  console.log(info);
   return (
     <div className="item">
       <img className="img-item" src={info.Imagen} alt={info.Modelo} />

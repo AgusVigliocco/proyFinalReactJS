@@ -2,6 +2,7 @@ import React from "react";
 import { useCartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import ItemCart from "../ItemCart";
+import './Cart.css';
 
 const Cart = () => {
   const { cart, TotalPrice } = useCartContext();
@@ -27,9 +28,17 @@ const Cart = () => {
   return (
     <div className=" align-items-center ">
       <div>
-        <div className="m-5 bg-danger fs-3">
-          Total: ${TotalPrice().toFixed(2)}
-        </div>
+
+      </div>
+      <div className="card-body d-flex">
+        {cart.map((product) => (
+          <ItemCart key={product.Modelo} item={product} />
+        ))}
+      </div>
+      <div className="m-5 bg-danger fs-3 totalPrice">
+        <p> Total: u$s {TotalPrice().toFixed(2)}</p>
+      </div>
+      <div className=" container buttons">
         <Link to="/">
           <button type="button" className="m-4 btn btn-primary">
             Seguir comprando
@@ -38,11 +47,6 @@ const Cart = () => {
         <button type="button" className="btn btn-success">
           Finalizar compra
         </button>
-      </div>
-      <div className="card-body d-flex">
-        {cart.map((product) => (
-          <ItemCart key={product.Modelo} item={product} />
-        ))}
       </div>
     </div>
   );
