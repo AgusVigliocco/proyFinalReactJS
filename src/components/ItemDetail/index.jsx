@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ItemCount from "../../components/ItemCount";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
+import "./itemDetail.css";
 
 const ItemDetail = ({ data }) => {
   const [irCarrito, setIrCarrito] = useState(false);
@@ -15,7 +16,7 @@ const ItemDetail = ({ data }) => {
   return (
     <div className="card p-5">
       <div className="row g-0">
-        <div className="col-md-4">
+        <div className="col-md-4 image-detail">
           <img src={data.Imagen} className="img-detalle" alt={data.Modelo} />
         </div>
         <div className="col-md-8">

@@ -15,6 +15,7 @@ const Navbar = () => {
             height="auto"
             className="d-inline-block align-text-top"
           />
+          <p>Tienda Apple ReactJS</p>
         </NavLink>
         <div>
           <NavLink className="cart-link" to="/carrito">

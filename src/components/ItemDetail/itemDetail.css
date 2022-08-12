@@ -1,0 +1,8 @@
+.image-detail {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-content: stretch;
+  justify-content: center;
+  align-items: baseline;
+}

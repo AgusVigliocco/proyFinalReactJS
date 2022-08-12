@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import ItemList from "../../components/ItemList";
 import "./ItemListContainer.css";
@@ -12,14 +12,18 @@ export const ItemListContainer = () => {
 
   useEffect(() => {
     const querydb = getFirestore();
-    const queryCollection = collection(querydb, 'productos');
+    const queryCollection = collection(querydb, "productos");
     if (categoriaId) {
-      const queryFilter = query(queryCollection, where('Categoria', '==', categoriaId));
-      getDocs(queryFilter)
-        .then(res => setData(res.docs.map(producto => ({ Categoria: producto.Categoria, ...producto.data() }))))
+      const queryFilter = query(queryCollection, where("Categoria", "==", categoriaId));
+      getDocs(queryFilter).then((res) =>
+        setData(
+          res.docs.map((product) => ({ id: product.id, ...product.data() })),
+        ),
+      );
     } else {
-      getDocs(queryCollection)
-        .then(res => setData(res.docs.map(producto => ({ Categoria: producto.Categoria, ...producto.data() }))))
+      getDocs(queryCollection).then((res) =>
+        setData(
+          res.docs.map((product) => ({ id: product.id, ...product.data() }))))
     }
   }, [categoriaId]);
 
