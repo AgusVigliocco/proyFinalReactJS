@@ -2,11 +2,12 @@ import React from "react";
 import { useCartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import ItemCart from "../ItemCart";
-import { addDoc, getFirestore, collection, doc, setDoc } from 'firebase/firestore'
+import { addDoc, getFirestore, collection } from 'firebase/firestore'
 import './Cart.css';
 
 const Cart = () => {
   const { cart, TotalPrice } = useCartContext();
+  const { ClearCart } = useCartContext();
 
 
   const orden = {
@@ -59,9 +60,6 @@ const Cart = () => {
         ))}
       </div>
 
-
-
-
       <div className="m-5 bg-danger fs-3 totalPrice">
         <p> Total: u$s {TotalPrice().toFixed(2)}</p>
       </div>
@@ -73,6 +71,9 @@ const Cart = () => {
         </Link>
         <button onClick={handleClick} type="button" className="btn btn-success">
           Finalizar compra
+        </button>
+        <button onClick={ClearCart} type="button" className="btn btn-danger m-4">
+          Vaciar carrito
         </button>
       </div>
     </div>

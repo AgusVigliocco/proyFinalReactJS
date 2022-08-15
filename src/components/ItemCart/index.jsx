@@ -35,7 +35,7 @@ const ItemCart = ({ item }) => {
           type="button"
           className="btn btn-danger"
         >
-          <span><i class="bi bi-trash-fill"></i></span>
+          <span><i className="bi bi-trash-fill"></i></span>
         </button>
       </div>
     </div>

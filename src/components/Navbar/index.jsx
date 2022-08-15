@@ -61,7 +61,7 @@ const Navbar = () => {
                 <NavLink className="nav-link" to="/categoria/Iphone">
                   <div className="d-flex justify-content-between">
                     <p>Iphone</p>
-                    <i class="bi bi-phone"></i>
+                    <i className="bi bi-phone"></i>
                   </div>
                 </NavLink>
               </li>
@@ -69,7 +69,7 @@ const Navbar = () => {
                 <NavLink className="nav-link" to="/categoria/MacBook">
                   <div className="d-flex justify-content-between">
                     <p>MacBook</p>
-                    <i class="bi bi-laptop"></i>
+                    <i className="bi bi-laptop"></i>
                   </div>
                 </NavLink>
               </li>
@@ -77,7 +77,7 @@ const Navbar = () => {
                 <NavLink className="nav-link" to="/categoria/Watch">
                   <div className="d-flex justify-content-between">
                     <p>Watch</p>
-                    <i class="bi bi-smartwatch"></i>
+                    <i className="bi bi-smartwatch"></i>
                   </div>
                 </NavLink>
               </li>
@@ -85,7 +85,7 @@ const Navbar = () => {
                 <NavLink className="nav-link" to="/carrito">
                   <div className="d-flex justify-content-between">
                     <p>Carrito</p>
-                    <i class="bi bi-cart"></i>
+                    <i className="bi bi-cart"></i>
                   </div>
                 </NavLink>
               </li>
