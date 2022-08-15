@@ -8,3 +8,11 @@
   align-items: center;
   margin-top: 1rem;
 }
+
+.img-carrito-vacio {
+  width: 30%;
+  height: auto;
+  background-color: rgb(27, 27, 27);
+  margin: 2rem;
+  border-radius: 50%;
+}

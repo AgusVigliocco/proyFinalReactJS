@@ -1,0 +1,11 @@
+.img-carrito {
+  max-width: 5%;
+}
+
+.tarjeta {
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -17,20 +17,22 @@ const Navbar = () => {
           />
           <p>Tienda Apple ReactJS</p>
         </NavLink>
-        <div>
-          <NavLink className="cart-link" to="/carrito">
-            <CartWidget />
-          </NavLink>
+        <div className="d-flex">
+          <div>
+            <NavLink className="cart-link" to="/carrito">
+              <CartWidget />
+            </NavLink>
+          </div>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasDarkNavbar"
+            aria-controls="offcanvasDarkNavbar"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
         </div>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasDarkNavbar"
-          aria-controls="offcanvasDarkNavbar"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
         <div
           className="offcanvas offcanvas-end text-bg-dark"
           tabIndex="-1"
@@ -43,7 +45,7 @@ const Navbar = () => {
               alt=""
               width="40%"
               height="auto"
-              className="d-inline-block align-text-top"
+              className="d-inline-block align-text-top img-menu"
             />
 
             <button
@@ -57,22 +59,34 @@ const Navbar = () => {
             <ul className="navbar-nav justify-content-center flex-grow-1 pe-3 fs-4 link-navbar">
               <li className="nav-item">
                 <NavLink className="nav-link" to="/categoria/Iphone">
-                  <p>Iphone</p>
+                  <div className="d-flex justify-content-between">
+                    <p>Iphone</p>
+                    <i class="bi bi-phone"></i>
+                  </div>
                 </NavLink>
               </li>
-              <li className="nav-item">
+              <li className="nav-item ">
                 <NavLink className="nav-link" to="/categoria/MacBook">
-                  <p>MacBook</p>
+                  <div className="d-flex justify-content-between">
+                    <p>MacBook</p>
+                    <i class="bi bi-laptop"></i>
+                  </div>
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/categoria/Watch">
-                  <p>Watch</p>
+                  <div className="d-flex justify-content-between">
+                    <p>Watch</p>
+                    <i class="bi bi-smartwatch"></i>
+                  </div>
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/carrito">
-                  <p>Carrito</p>
+                  <div className="d-flex justify-content-between">
+                    <p>Carrito</p>
+                    <i class="bi bi-cart"></i>
+                  </div>
                 </NavLink>
               </li>
             </ul>

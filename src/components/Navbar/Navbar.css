@@ -1,9 +1,14 @@
-.link-navbar{
-    text-align: center;
-    text-decoration: none;
+.link-navbar {
+  text-align: center;
+  text-decoration: none;
 }
 
-.navbar-brand{
-    text-align: center;
-    text-decoration: none;
+.navbar-brand {
+  text-align: center;
+  text-decoration: none;
+}
+
+.img-menu {
+  width: 20%;
+  height: auto;
 }

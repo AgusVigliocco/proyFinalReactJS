@@ -6,10 +6,13 @@ const CartWidget = () => {
   const { TotalProducts } = useCartContext();
 
   return (
-    <div>
-      <i className="bi bi-cart3"></i>
-      <span>{TotalProducts() || ""}</span>
+
+    <div className="mx-3 d-flex">
+      <i className="bi bi-cart3 " ></i>
+      <span className="item-number">{TotalProducts() || ""}</span>
     </div>
+
+
   );
 };
 

@@ -6,42 +6,37 @@ const ItemCart = ({ item }) => {
   const { RemoveProduct } = useCartContext();
   const impuestos = (item.Precio * item.quantity) * 0.21;
   return (
-    <div className="card m-4">
-      <div className="d-flex justify-content-between align-items-start">
-        <img className="img-carrito" src={item.Imagen} alt={item.Modelo} />
-        <button
-          onClick={() => RemoveProduct(item.id)}
-          type="button"
-          className="btn btn-danger"
-        >
-          X
-        </button>
-      </div>
-      <div className="">
-        <div className="">
-          <p>
-            Modelo: <strong>{item.Modelo}</strong>
-          </p>
-          <p>
-            Cantidad: <strong>{item.quantity}</strong>
-          </p>
-        </div>
-        <p>
+    <div className="card tarjeta m-4">
+      <img className="img-carrito" src={item.Imagen} alt={item.Modelo} />
+      <div className="d-flex">
+        <p className="mx-4">
+          Modelo: <strong>{item.Modelo}</strong>
+        </p>
+        <p className="mx-4">
+          Cantidad: <strong>{item.quantity}</strong>
+        </p>
+        <p className="mx-4">
           Precio por unidad: <strong>${item.Precio}</strong>
         </p>
-        <p>
+        <p className="mx-4">
           Subtotal: <strong>${(item.Precio * item.quantity).toFixed(2)}</strong>{" "}
         </p>
-        <p>
+        <p className="mx-4">
           Impuestos: <strong>${impuestos.toFixed(2)}</strong>{" "}
         </p>
-        <p>
+        <p className="mx-4">
           Precio total:{" "}
           <strong>
             ${((item.Precio * item.quantity) + impuestos).toFixed(2)}
           </strong>
         </p>
-        <div></div>
+        <button
+          onClick={() => RemoveProduct(item.id)}
+          type="button"
+          className="btn btn-danger"
+        >
+          <span><i class="bi bi-trash-fill"></i></span>
+        </button>
       </div>
     </div>
   );
