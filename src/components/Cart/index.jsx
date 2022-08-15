@@ -2,11 +2,12 @@ import React from "react";
 import { useCartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import ItemCart from "../ItemCart";
-import { addDoc, getFirestore, collection } from 'firebase/firestore'
+import { addDoc, getFirestore, collection, doc, setDoc } from 'firebase/firestore'
 import './Cart.css';
 
 const Cart = () => {
   const { cart, TotalPrice } = useCartContext();
+
 
   const orden = {
     Comprador: {
@@ -27,7 +28,8 @@ const Cart = () => {
     const db = getFirestore();
     const ordenCollection = collection(db, 'ordenes')
     addDoc(ordenCollection, orden)
-      .then(({ id }) => console.log(id));
+      .then(({ id }) => alert(`Compra finalizada!
+    Su comprobante de compra es: ${id}`));
   }
 
   if (cart.length === 0) {

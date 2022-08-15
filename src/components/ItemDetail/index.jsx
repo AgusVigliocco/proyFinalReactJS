@@ -23,7 +23,7 @@ const ItemDetail = ({ data }) => {
           <div className="card-body">
             <h2 className="card-title">{data.Modelo}</h2>
             <h5 className="card-title">
-              <strong>u$s {data.Precio}</strong>
+              <strong>u$s {data.Precio} + impuestos</strong>
             </h5>
             <p className="card-text">{data.Descripcion}</p>
 
@@ -31,16 +31,10 @@ const ItemDetail = ({ data }) => {
               <small className="text-muted">Stock: {data.Stock}</small>
             </p>
             {irCarrito ? (
-              <Link
-                to="/carrito"
-                className="btn btn-success button"
-                role="button"
-              >
+              <Link to="/carrito" className="btn btn-success button" role="button"              >
                 Terminar Compra
-              </Link>
-            ) : (
-              <ItemCount initial={1} stock={5} onAdd={onAdd} />
-            )}
+              </Link>) :
+              (<ItemCount initial={1} stock={data.Stock} onAdd={onAdd} />)}
           </div>
         </div>
       </div>
