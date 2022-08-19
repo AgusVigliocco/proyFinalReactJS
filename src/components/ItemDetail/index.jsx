@@ -3,12 +3,20 @@ import ItemCount from "../../components/ItemCount";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 import "./itemDetail.css";
+import swal from "sweetalert";
 
 const ItemDetail = ({ data }) => {
   const [irCarrito, setIrCarrito] = useState(false);
   const { AddProduct } = useCartContext();
 
   const onAdd = (quantity) => {
+    /*    swal(`${quantity} ${data.Modelo} agregados al carrito`); */
+    swal({
+      title: "Correcto!",
+      text: `${quantity} ${data.Modelo} agregados al carrito`,
+      icon: "success",
+      button: "Cerrar!",
+    });
     setIrCarrito(true);
     AddProduct(data, quantity);
   };
@@ -32,7 +40,7 @@ const ItemDetail = ({ data }) => {
             </p>
             {irCarrito ? (
               <Link to="/carrito" className="btn btn-success button" role="button"              >
-                Terminar Compra
+                Ir al carrito!
               </Link>) :
               (<ItemCount initial={1} stock={data.Stock} onAdd={onAdd} />)}
           </div>

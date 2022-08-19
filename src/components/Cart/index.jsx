@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import ItemCart from "../ItemCart";
 import { addDoc, getFirestore, collection } from 'firebase/firestore'
 import './Cart.css';
+import swal from "sweetalert";
 
 const Cart = () => {
   const { cart, TotalPrice } = useCartContext();
@@ -12,12 +13,12 @@ const Cart = () => {
 
   const orden = {
     Comprador: {
-      Nombre: "Agustin",
-      Apellido: "Vigliocco",
-      Direccion: "Calle falsa 123",
-      Telefono: "34343434",
-      Email: "fakemail@fake.com",
-      Comentario: "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+      Nombre: "",
+      Apellido: "",
+      Direccion: "",
+      Telefono: "",
+      Email: "",
+
 
     },
     productos: cart.map(producto => ({ id: producto.id, modelo: producto.Modelo, precio: producto.Precio })),
@@ -29,8 +30,14 @@ const Cart = () => {
     const db = getFirestore();
     const ordenCollection = collection(db, 'ordenes')
     addDoc(ordenCollection, orden)
-      .then(({ id }) => alert(`Compra finalizada!
-    Su comprobante de compra es: ${id}`));
+      .then(({ id }) => swal({
+        title: "Compra finalizada!",
+        text: ` Le enviaremos la factura al correo ${orden.Comprador.Email},
+        Su numero de compra es: ${id}!`,
+        icon: "info",
+      }));
+
+
   }
 
   if (cart.length === 0) {
