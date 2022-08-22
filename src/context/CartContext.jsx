@@ -24,7 +24,7 @@ const CartProvider = ({ children }) => {
       title: "Esta seguro?",
       text: "Una vez vaciado el carrito, deberá llenarlo nuevamente!",
       icon: "warning",
-      buttons: true,
+      buttons: ["Cancelar", "Ok"],
       dangerMode: true,
     })
       .then((willDelete) => {
@@ -47,7 +47,7 @@ const CartProvider = ({ children }) => {
       title: "Esta seguro?",
       text: "Una vez eliminado el producto, deberá realizar la compra nuevamente",
       icon: "warning",
-      buttons: true,
+      buttons: ["Cancelar", "Ok"],
       dangerMode: true,
     })
       .then((willDelete) => {

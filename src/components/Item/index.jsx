@@ -5,7 +5,7 @@ import React from "react";
 const Item = ({ info }) => {
   console.log(info);
   return (
-    <div className="item">
+    <div className="item box-wrap">
       <img className="img-item" src={info.Imagen} alt={info.Modelo} />
       <p>{info.Modelo}</p>
       <p>u$s {info.Precio} (+ impuestos)</p>

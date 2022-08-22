@@ -18,9 +18,8 @@ const Cart = () => {
       Direccion: "Calle Falsa 123",
       Telefono: "123456789",
       Email: "fakeMail@fake.com",
-
-
     },
+
     productos: cart.map(producto => ({ id: producto.id, modelo: producto.Modelo, precio: producto.Precio })),
     total: TotalPrice()
   }
@@ -34,7 +33,7 @@ const Cart = () => {
         title: "Compra finalizada!",
         text: ` Le enviaremos la factura al correo ${orden.Comprador.Email},
         Su numero de compra es: ${id}!`,
-        icon: "info",
+
       }));
 
 
