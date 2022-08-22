@@ -1,4 +1,6 @@
 import React, { useState, useContext } from "react";
+import swal from "sweetalert";
+
 const CartContext = React.createContext([]);
 
 export const useCartContext = () => useContext(CartContext);
@@ -17,13 +19,47 @@ const CartProvider = ({ children }) => {
 
   const [cart, setCart] = useState([]);
 
-  const ClearCart = () => setCart([]);
+  const ClearCart = () =>
+    swal({
+      title: "Esta seguro?",
+      text: "Una vez vaciado el carrito, deberá llenarlo nuevamente!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+      .then((willDelete) => {
+        if (willDelete) {
+          setCart([]);
+          swal("Listo! El carrito se vacio correctamente!", {
+            icon: "success",
+          });
+        } else {
+          swal("Mantenemos los productos cargados en el carrito!");
+        }
+      });
+
 
   const IsInCart = (id) =>
     cart.find((product) => product.id === id) ? true : false;
 
   const RemoveProduct = (id) =>
-    setCart(cart.filter((product) => product.id !== id));
+    swal({
+      title: "Esta seguro?",
+      text: "Una vez eliminado el producto, deberá realizar la compra nuevamente",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+      .then((willDelete) => {
+        if (willDelete) {
+          setCart(cart.filter((product) => product.id !== id));
+          swal("El producto fue eliminado del carrito", {
+            icon: "success",
+          });
+        } else {
+          swal("El producto se mantiene a salvo!");
+        }
+      });
 
   const AddProduct = (item, quantity) => {
     if (IsInCart(item.id)) {

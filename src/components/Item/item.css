@@ -1,7 +1,8 @@
 .img-item {
-  width: 80%;
-  height: auto;
-  margin: 1rem;
+  max-width: auto;
+  max-height: 50%;
+  object-fit: fill;
+  margin: 0.2rem;
 }
 .item {
   display: flex;
@@ -10,7 +11,7 @@
   margin: 2rem;
   justify-content: flex-end;
   border: 0.1rem rgb(218, 218, 218) solid;
-  border-radius: 1rem;
+  border-radius: 2rem;
 }
 .button {
   margin-bottom: 10px;

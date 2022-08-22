@@ -13,11 +13,11 @@ const Cart = () => {
 
   const orden = {
     Comprador: {
-      Nombre: "",
-      Apellido: "",
-      Direccion: "",
-      Telefono: "",
-      Email: "",
+      Nombre: "Agustin",
+      Apellido: "Vigliocco",
+      Direccion: "Calle Falsa 123",
+      Telefono: "123456789",
+      Email: "fakeMail@fake.com",
 
 
     },

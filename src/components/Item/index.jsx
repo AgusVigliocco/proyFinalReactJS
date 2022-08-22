@@ -9,6 +9,7 @@ const Item = ({ info }) => {
       <img className="img-item" src={info.Imagen} alt={info.Modelo} />
       <p>{info.Modelo}</p>
       <p>u$s {info.Precio} (+ impuestos)</p>
+      <p> Stock: {info.Stock}</p>
 
       <Link
         to={`/detalle/${info.id}`}
